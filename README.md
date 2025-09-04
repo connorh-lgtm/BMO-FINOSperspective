@@ -28,6 +28,9 @@ applications.
     a high-performance columnar expression language based on
     [ExprTK](https://github.com/ArashPartow/exprtk).
 
+> **Note**: This project includes comprehensive testing infrastructure to ensure
+> data visualization accuracy and performance across different platforms and use cases.
+
 -   A framework-agnostic User Interface packaged as a
     [Custom Element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements),
     powered either in-browser via WebAssembly or virtually via WebSocket server
