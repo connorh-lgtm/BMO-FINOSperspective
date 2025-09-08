@@ -45,22 +45,6 @@ async function build_all() {
 
     // JavaScript
     const BUILD = [
-        // WASM assets inlined into a single monolithic `.js` file. No special
-        // loades required, this version of Perspective should be the easiest
-        // to use but also the least performant at load time.
-        // {
-        //     'Import via `<script type="module">`': true,
-        //     "Requires WASM bootstrap": false,
-        //     "Load as binary": false,
-        //     "Bundler friendly": true,
-        // },
-        {
-            entryPoints: ["src/ts/perspective-viewer.inline.ts"],
-            format: "esm",
-            plugins: [PerspectiveEsbuildPlugin()],
-            loader: { ".wasm": "binary" },
-            outfile: "dist/esm/perspective-viewer.inline.js",
-        },
         // No WASM assets inlined or linked.
         // {
         //     'Import via `<script type="module">`': true, // *****
