@@ -21,10 +21,14 @@ import perspective from "./perspective_client";
                 let perspective = await import(
                     "http://localhost:6598/node_modules/@finos/perspective/dist/esm/perspective.js"
                 );
-                
-                const SERVER_WASM = await fetch("http://localhost:6598/node_modules/@finos/perspective/dist/wasm/perspective-server.wasm");
-                const CLIENT_WASM = await fetch("http://localhost:6598/node_modules/@finos/perspective/dist/wasm/perspective-js.wasm");
-                
+
+                const SERVER_WASM = await fetch(
+                    "http://localhost:6598/node_modules/@finos/perspective/dist/wasm/perspective-server.wasm"
+                );
+                const CLIENT_WASM = await fetch(
+                    "http://localhost:6598/node_modules/@finos/perspective/dist/wasm/perspective-js.wasm"
+                );
+
                 await Promise.all([
                     perspective.default.init_server(SERVER_WASM),
                     perspective.default.init_client(CLIENT_WASM),
@@ -52,10 +56,14 @@ import perspective from "./perspective_client";
                 let perspective = await import(
                     "http://localhost:6598/node_modules/@finos/perspective/dist/esm/perspective.js"
                 );
-                
-                const SERVER_WASM = await fetch("http://localhost:6598/node_modules/@finos/perspective/dist/wasm/perspective-server.wasm");
-                const CLIENT_WASM = await fetch("http://localhost:6598/node_modules/@finos/perspective/dist/wasm/perspective-js.wasm");
-                
+
+                const SERVER_WASM = await fetch(
+                    "http://localhost:6598/node_modules/@finos/perspective/dist/wasm/perspective-server.wasm"
+                );
+                const CLIENT_WASM = await fetch(
+                    "http://localhost:6598/node_modules/@finos/perspective/dist/wasm/perspective-js.wasm"
+                );
+
                 await Promise.all([
                     perspective.default.init_server(SERVER_WASM),
                     perspective.default.init_client(CLIENT_WASM),
