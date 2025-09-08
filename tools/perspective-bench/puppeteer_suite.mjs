@@ -50,8 +50,16 @@ perspective_bench.suite(
             const items = await page.evaluate(
                 async ([version, suite, version_idx]) => {
                     const { default: perspective } = await import(
-                        `/tools/perspective-bench/node_modules/${version}/dist/esm/perspective.inline.js`
+                        `/tools/perspective-bench/node_modules/${version}/dist/esm/perspective.js`
                     );
+                    
+                    const SERVER_WASM = await fetch(`/tools/perspective-bench/node_modules/${version}/dist/wasm/perspective-server.wasm`);
+                    const CLIENT_WASM = await fetch(`/tools/perspective-bench/node_modules/${version}/dist/wasm/perspective-js.wasm`);
+                    
+                    await Promise.all([
+                        perspective.init_server(SERVER_WASM),
+                        perspective.init_client(CLIENT_WASM),
+                    ]);
                     const benchmarks = await import(
                         "/tools/perspective-bench/cross_platform_suite.mjs"
                     );

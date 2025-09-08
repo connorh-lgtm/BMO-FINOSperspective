@@ -108,12 +108,6 @@ Webpack config:
 }
 ```
 
-## Inline builds with a bundler <!-- How to -->
-
-```javascript
-import "@finos/perspective-viewer/dist/esm/perspective-viewer.inline.js";
-import psp from "@finos/perspective/dist/esm/perspective.inline.js";
-```
 
 ## CDN builds <!-- How to -->
 
